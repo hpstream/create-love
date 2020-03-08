@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import React,{ useState, useEffect } from 'react';
+import Home from './pages/Home';
+import Search from './pages/Search';
+function btn(e) {
+  console.dir(e.target);
+}
+function App(porps) {
+  const [date, setDate] = useState(new Date());
+  useEffect(() => {
+    const timeId = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+    return () => clearInterval(timeId);
+  });
+  
+
+
+   return (
+    <div>
+      <Home></Home>
+       <Search click={btn}/>
+      <div>{date.toLocaleTimeString()}</div>
     </div>
   );
 }
-
 export default App;
