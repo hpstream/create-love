@@ -184,6 +184,33 @@ this.timerID = setInterval(() => {
 }, 1000);
 ```
 ## context 跨层级通信
-
+[官网详细文档](https://react.docschina.org/docs/context.html#reactcreatecontext)
+```
+React.createContext('light')
+```
 ## redux 组件间通信
 
+# 生命中周期
+## 最常用的生命周期
+```
+componentWillMount
+componentDidMount
+componentWillUnmount
+componentWillUpdate
+componentDidUpdate
+shouldComponentUpdate
+```
+
+# 高级指引
+## Content 跨级通信
+
+## 组件复合 composition
+备注： 类似于vue插槽的功能
+[组合vs继承](https://react.docschina.org/docs/composition-vs-inheritance.html)
+
+## 高阶组件（HOC）
+为了提高组件的复用率，可测试性，就要保证组件功能单一性，但是若要满足复杂需求就要扩展功能单一的组件，在react 里就有了HOC（high-order Components）的概念。
+> 定义：高阶组件是一个工厂函数，它接受一个组件返回另一个组件
+> 装饰器的模式 就是高阶组件的语法糖
+
+## hooks
